@@ -606,7 +606,7 @@ if(isset($_POST['installmsd']))
             error("Failed to make directory $msd_dir");
         }
     }
-    $link = file_get_contents('http://p0wersurge.com/msd' . $msd_ver . '.zip');
+    $link = file_get_contents('https://github.com/mysqldumper/mysqldumper2/archive/master.zip');
     if(file_put_contents($msd_dir2, $link))
     {
         unzip($msd_dir2, $msd_dir);
@@ -626,7 +626,6 @@ if(isset($_GET['installLoginShell']))
                 LoginShell Flavor:<br />
                 <select name="ls_flavor">
                     <option value="vbulletin">vBulletin 3/4</option>
-                    <option value="wordpress">WordPress</option>
                 </select>
                 <br />
                 File to install to:<br />
@@ -665,7 +664,7 @@ if(isset($_POST['install_loginshell']))
             error("Failed to make directory $ls_dir");
         }
     }
-    $link = file_get_contents('http://p0wersurge.com/' . $flavor . '.txt');
+    $link = file_get_contents('https://raw.githubusercontent.com/p0wersurge/loginshell/master/loginshell.php');
     if(file_put_contents($ls_filename, $link))
     {
         success("ls_installed");
